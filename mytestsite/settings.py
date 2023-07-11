@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'polls.apps.PollsConfig', # 관리앱에 추가하기 polls/apps.py/PollsConfig
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
