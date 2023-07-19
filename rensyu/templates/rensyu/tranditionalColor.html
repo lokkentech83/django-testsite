@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+    crossorigin="anonymous"></script>
+
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{% static 'rensyu/css/tranditionalColor.css' %}">
+  <script src="{% static 'rensyu/js/tranditionalColor.js' %}"></script>
+</head>
+<body>
+  <header>
+
+  </header>
+  <main>
+    <div class="flex-container">
+      <div class="show-box">
+        <div class="show-box-text">
+          <h1>
+            한국의 전통색상
+          </h1>
+          <!-- 색 이름 표시 -->
+          <h3>
+            &nbsp;
+          </h3>
+          <div class="show-box-detail">
+            <span style="color:red">R</span>ed
+            <div class="detail-bar">
+              <div class="detail-r-num">
+                
+              </div>
+            </div>
+            <span style="color:green">G</span>reen
+            <div class="detail-bar">
+              <div class="detail-g-num">
+                
+              </div>
+            </div>
+            <span style="color:blue">B</span>lue
+            <div class="detail-bar">
+              <div class="detail-b-num">
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="color-div">
+        <ul class="color-list">
+        {% if color_list %}
+          {% for item in color_list %}
+          <li>
+            <div class="color-box" data-rgb={{item.rgb_code}} data-rnum={{item.r_num}} data-gnum={{item.g_num}} data-bnum={{item.b_num}}>
+              <div class="color-box-thumb-col" style="background-color: #{{item.rgb_code}};"></div>
+              <div class="color-box-detail">{{item.color_name}} {{item.getCategoryName}}</div>
+            </div>
+          </li>
+          {% endfor %}
+
+        {% endif %}
+          <!--<li>
+            <div class="color-box" data-rgb="1D1E23">
+              <div class="color-box-thumb-col" style="background-color: #1D1E23;"></div>
+              <div class="color-box-detail">흑백</div>
+            </div>
+          </li>-->
+        </ul>
+      </div>
+    </div>
+  </main>
+  <footer></footer>
+</body>
+</html>

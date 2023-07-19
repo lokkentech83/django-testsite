@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="{% static 'rensyu/css/index.css' %}">
+  <script src="{% static 'rensyu/js/index.js' %}"></script>
+
+</head>
+<body>
+  <div class="">
+    <h1>django 어플리케이션</h1>
+      <div>{{ date }}</div>
+      <ul>
+        <li><a href="{% url 'rensyu:tdcolor' %}">한국의 전통색</a></li>
+        <details>전통색을 시각화하려면...</details>
+        <li><a href="{% url 'rensyu:userlist' %}">유저 정보 관리 페이지</a></li>
+        <details>유저 작성, 확인, 수정, 삭제</details>
+      </ul>
+    
+  </div>
+</body>
+
+</html>

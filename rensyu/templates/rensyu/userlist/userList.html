@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>유저 리스트</title>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <th>이름</th>
+      <th>가나</th>
+      <th>나이</th>
+      <th>생일</th>
+      <th>성별</th>
+      <th>혈액형</th>
+      <th>이메일</th>
+      <th>전화번호</th>
+      <th>휴대전화</th>
+      <th>우편번호</th>
+      <th>주소</th>
+      <th>회사명</th>
+      <th></th>
+    </tr>
+    {% for item in user_list %}
+    <tr>
+      <td>{{ item.id }} {{ item.kanzi_name }}</td>
+      <td>{{ item.kana_name }}</td>
+      <td>{{ item.age }}</td>
+      <td>{{ item.birthdate }}</td>
+      <td>{{ item.gender }}</td>
+      <td>{{ item.blood_type }}</td>
+      <td>{{ item.mail_address }}</td>
+      <td>{{ item.tel_num }}</td>
+      <td>{{ item.mobile_tel_num }}</td>
+      <td>{{ item.post_num }}</td>
+      <td>{{ item.address }}</td>
+      <td>{{ item.company_name }}</td>
+      <td>
+        <button onClick="location.href='{% url 'rensyu:userDetail' item.id %}'">상세정보</button>
+        <button onClick="location.href='{% url 'rensyu:userModify' item.id %}'">수정</button>
+        <button onClick="alert('del')">삭제</button>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+
+</body>
+
+</html>

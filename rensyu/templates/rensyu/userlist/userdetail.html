@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>유저 상세정보</title>
+</head>
+<body>
+  <table>
+    <tr>
+      <td>ID</td>
+      <td>{{ user_data.id }}</td>
+    </tr>
+    <tr>
+      <td>漢字氏名</td>
+      <td>{{ user_data.kanzi_name }}</td>
+    </tr>
+    <tr>
+      <td>かな氏名</td>
+      <td>{{ user_data.kana_name }}</td>
+    </tr>
+    <tr>
+      <td>年齢</td>
+      <td>{{ user_data.age }}</td>
+    </tr>
+    <tr>
+      <td>誕生日</td>
+      <td>{{ user_data.birthdate }}</td>
+    </tr>
+    <tr>
+      <td>性別</td>
+      <td>{{ user_data.gender }}</td>
+    </tr>
+    <tr>
+      <td>血液型</td>
+      <td>{{ user_data.blood_type }}</td>
+    </tr>
+    <tr>
+      <td>メールアドレス</td>
+      <td>{{ user_data.mail_address }}</td>
+    </tr>
+    <tr>
+      <td>電話番号</td>
+      <td>{{ user_data.tel_num }}</td>
+    </tr>
+    <tr>
+      <td>携帯電話番号</td>
+      <td>{{ user_data.mobile_tel_num }}</td>
+    </tr>
+    <tr>
+      <td>郵便番号</td>
+      <td>{{ user_data.post_num }}</td>
+    </tr>
+    <tr>
+      <td>住所</td>
+      <td>{{ user_data.address }}</td>
+    </tr>
+    <tr>
+      <td>会社名</td>
+      <td>{{ user_data.company_name }}</td>
+    </tr>
+  </table>
+  
+  
+</body>
+</html>

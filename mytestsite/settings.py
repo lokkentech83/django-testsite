@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'polls.apps.PollsConfig', # 관리앱에 추가하기 polls/apps.py/PollsConfig
+    'rensyu.apps.RensyuConfig', # 관리앱에 추가하기 rensyu/apps.py/RensyuConfig
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
