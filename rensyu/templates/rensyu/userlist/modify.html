@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  데이터 수정하기
+  
+  <form action="{% url 'rensyu:updateUserData' user_data.id %}" method="post">
+    {% csrf_token %}
+    이름
+    <table>
+      <tr>
+        <td>ID</td>
+        <td>{{ user_data.id }}</td>
+      </tr>
+      <tr>
+        <td>漢字氏名</td>
+        <td>
+          <input type="text" name="kanzi_name" id="kanzi_name" value='{{ user_data.kanzi_name }}'>
+        </td>
+      </tr>
+      <tr>
+        <td>かな氏名</td>
+        <td>
+          <input type="text" name="kana_name" id="kana_name" value='{{ user_data.kana_name }}'>
+        </td>
+      </tr>
+      <!-- <tr>
+        <td>年齢</td>
+        <td>
+          <input type="text" name="age" id="age" value={{ user_data.age }}>
+        </td>
+      </tr>
+      <tr>
+        <td>誕生日</td>
+        <td>
+          TODO datepicker
+          {{ user_data.birthdate }}
+        </td>
+      </tr>
+      <tr>
+        <td>性別</td>
+        <td>
+          TODO SELECT 코드로 어떻게 안되나
+          {{ user_data.gender_text }}
+        </td>
+      </tr>
+      <tr>
+        <td>血液型</td>
+        <td>
+          TODO SELECT 코드로 어떻게 안되나
+          {{ user_data.blood_type_text }}
+        </td>
+      </tr>
+      <tr>
+        <td>メールアドレス</td>
+        <td>
+          <input type="text" name="mail_address" id="mail_address" value={{ user_data.mail_address }}>
+        </td>
+      </tr>
+      <tr>
+        <td>電話番号</td>
+        <td>
+          <input type="text" name="tel_num" id="tel_num" value={{ user_data.tel_num }}>
+        </td>
+      </tr>
+      <tr>
+        <td>携帯電話番号</td>
+        <td>
+          <input type="text" name="mobile_tel_num" id="mobile_tel_num" value={{ user_data.mobile_tel_num }}>
+        </td>
+      </tr>
+      <tr>
+        <td>郵便番号</td>
+        <td>
+          <input type="text" name="post_num" id="post_num" value={{ user_data.post_num }}>
+        </td>
+      </tr>
+      <tr>
+        <td>住所</td>
+        <td>
+          <input type="text" name="address" id="address" value={{ user_data.address }}>
+        </td>
+      </tr>
+      <tr>
+        <td>会社名</td>
+        <td>
+          <input type="text" name="company_name" id="company_name" value={{ user_data.company_name }}>
+        </td>
+      </tr> -->
+    </table>
+
+    
+    <button type="submit">수정하기</button>
+    <!-- TODO 뒤로가기? 목록으로 돌아가기? -->
+    <button>취소</button>
+  </form>
+  
+
+  
+</body>
+</html>

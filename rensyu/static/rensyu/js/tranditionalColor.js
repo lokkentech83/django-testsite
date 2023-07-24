@@ -15,14 +15,17 @@ $(function(){
     let gnum = $(this).data("gnum");
     let bnum = $(this).data("bnum");
 
-    $(".detail-r-num").css("background-color", "rgb(" + rnum + ",0,0)")
-    $(".detail-r-num").css("width", getRgbWidth(rnum)+"%")
+    $(".detail-r-num").css("background-color", "rgb(" + rnum + ",0,0)");
+    $(".detail-r-num").css("width", getRgbWidth(rnum)+"%");
+    $(".detail-r-num").parent().attr("title", rnum); // tooltip
 
-    $(".detail-g-num").css("background-color", "rgb(0," + gnum + ",0)")
-    $(".detail-g-num").css("width", getRgbWidth(gnum)+"%")
+    $(".detail-g-num").css("background-color", "rgb(0," + gnum + ",0)");
+    $(".detail-g-num").css("width", getRgbWidth(gnum)+"%");
+    $(".detail-g-num").parent().attr("title", gnum); // tooltip
 
-    $(".detail-b-num").css("background-color", "rgb(0,0," + bnum + ")")
-    $(".detail-b-num").css("width", getRgbWidth(bnum)+"%")
+    $(".detail-b-num").css("background-color", "rgb(0,0," + bnum + ")");
+    $(".detail-b-num").css("width", getRgbWidth(bnum)+"%");
+    $(".detail-b-num").parent().attr("title", bnum); // tooltip
 
     // r
     // console.log($(this).children(".color-box-detail").text(), "색깔이름");

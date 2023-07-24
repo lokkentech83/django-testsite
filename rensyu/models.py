@@ -40,11 +40,21 @@ class TranditionalColorCategory(models.Model):
 """
 유저관리 CRUD 테스트
 """
+
+# 性別
+CODE_GENDER = 2
+# 血液型
+CODE_BLOOD_TYPE = 3
+
 # コードリスト
 class CodeList(models.Model):
     code = models.CharField(max_length=4, unique=True) # 코드 ex) 0001
     code_name = models.CharField(max_length=100) # 코드명칭 ex) 성별
     code_description = models.CharField(max_length=1000) # 코드관련 설명 ex) 성별 관리용 코드, 남/여/기타등으로 데이터를 관리.
+
+    def __str__(self) -> str:
+        return self.code_name
+    
 
 # コード管理
 # 장고 모델에서는 single-column primary key만을 지원하므로 unique제약조건을 이용하여 복수칼럼에 대한 제약을 걸 수 밖에 없다고 한다.
@@ -75,3 +85,14 @@ class UserList(models.Model):
     post_num = models.CharField(max_length=15)
     address = models.CharField(max_length=200)
     company_name = models.CharField(max_length=50)
+
+    # TODO update_date 추가하기
+    # TODO create_date 추가하기 default가 date.now()
+
+    def gender_text(self) :
+        # 성별의 명칭 취득하기처리
+        return CodeList.objects.get(pk=CODE_GENDER).codemanage_set.get(code_subcode=self.gender).code_subname
+    
+    def blood_type_text(self) :
+        # 성별의 명칭 취득하기처리
+        return CodeList.objects.get(pk=CODE_BLOOD_TYPE).codemanage_set.get(code_subcode=self.gender).code_subname

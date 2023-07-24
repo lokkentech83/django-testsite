@@ -1,31 +1,4 @@
 @charset "utf-8";
-::before,
-::after {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box; /* 요소의 폭과 높이를 어떤식으로 계산하는가를 설정 デフォルトでは「要素の幅とサイズはpaddingとboarderを含めない」設定*/
-}
-
-ul, 
-ol {
-  list-style: none;
-}
-
-html {
-  height: 100%;
-}
-
-body {
-  /* 변경된 색상은 CSS의 transition 속성에 의해 부드럽게 전환됨 */
-  /* transition: background-color 0.3s ease;  */
-  /* background-color: white; */
-  height: 100%;
-  margin: 0;
-}
-
-main {
-  height: 100%;
-}
 
 .flex-container {
   flex: 1;
